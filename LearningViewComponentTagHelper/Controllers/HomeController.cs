@@ -1,4 +1,5 @@
 ﻿using LearningViewComponentTagHelper.Models;
+using MFramework.Services.FakeData;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -26,7 +27,30 @@ namespace LearningViewComponentTagHelper.Controllers
 
         public IActionResult List()
         {
-            return View();
+            Tuple<string, string> kisi1 = new Tuple<string, string>("Murat", "Başeren");
+            Tuple<string, int> kisi2 = new Tuple<string, int>("Murat Başeren", 38);
+
+            (string Ad, string Soyad) kisi3 = ("Kadir Murat", "Başeren");
+            (string AdSoyad, int Yas) kisi4 = ("Murat Başeren", 38);
+
+
+            //List<Tuple<string, string>> kisiler = new List<Tuple<string, string>>();
+            //kisiler.Add(new Tuple<string, string>("murat", "başeren"));
+            //kisiler.Add(new Tuple<string, string>("kadir", "başeren"));
+
+            List<(string Ad, string Soyad)> kisiler = new List<(string Ad, string Soyad)>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                kisiler.Add((NameData.GetFirstName(), NameData.GetSurname()));
+            }
+
+            //foreach ((string Ad, string Soyad) item in kisiler)
+            //{
+            //    //item.Ad
+            //}
+
+            return View(kisiler);
         }
 
 
