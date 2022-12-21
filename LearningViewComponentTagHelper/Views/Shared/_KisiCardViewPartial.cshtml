@@ -1,0 +1,13 @@
+﻿@model (string Ad, string Soyad)
+
+<div class="col-3 mb-3">
+    @*.card>.card-header+.card-body*@
+    <div class="card">
+        <div class="card-header">
+            Kişi Bilgisi
+        </div>
+        <div class="card-body">
+            @Model.Ad @Model.Soyad
+        </div>
+    </div>
+</div>
