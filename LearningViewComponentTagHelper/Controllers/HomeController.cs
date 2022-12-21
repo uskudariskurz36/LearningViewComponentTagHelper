@@ -26,6 +26,11 @@ namespace LearningViewComponentTagHelper.Controllers
         }
 
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
         public IActionResult List()
         {
             Tuple<string, string> kisi1 = new Tuple<string, string>("Murat", "Başeren");
