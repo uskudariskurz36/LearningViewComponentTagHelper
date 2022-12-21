@@ -28,6 +28,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="List">List</a>
                         </li>
+
+                        @*@await Component.InvokeAsync("Cart", new { count = 3, inline=true })*@
+                        <vc:cart count="3" inline="false"></vc:cart>
                     </ul>
                 </div>
             </div>

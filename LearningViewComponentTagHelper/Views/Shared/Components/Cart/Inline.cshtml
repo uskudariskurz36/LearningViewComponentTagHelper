@@ -1,0 +1,12 @@
+﻿@model List<string>
+
+@if (Model != null)
+{
+    @foreach (string item in Model)
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-action="Index" asp-controller="Home"
+       asp-route-filter="@item">@item</a>
+        </li>
+    }
+}
