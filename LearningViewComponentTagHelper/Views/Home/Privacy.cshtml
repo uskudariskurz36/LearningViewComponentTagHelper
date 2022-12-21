@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    string alertColor = "success";
+}
+
+<partial name="_SiteInfoPartial" model="@alertColor" />
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+@{
+    AddressInfoPartialModel addressInfoPartialModel = new AddressInfoPartialModel
+            {
+                Address = "Lorem ipsum dolor sit a met.",
+                City = "Ankara",
+                Country = "Türkiye",
+                Phone = "+905559997766",
+                EMail = "destek@abc.com",
+                Title = "Destek Hattımız",
+                PanelColor = Colors.success
+            };
+}
+
+<partial name="_AddressInfoPartial" model="@addressInfoPartialModel" />

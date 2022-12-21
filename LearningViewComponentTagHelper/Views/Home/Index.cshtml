@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string alertColor = "primary";
+}
+
+<partial name="_SiteInfoPartial" model="@alertColor" />
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    AddressInfoPartialModel addressInfoPartialModel = new AddressInfoPartialModel
+            {
+                Address = "Lorem ipsum dolor sit a met.",
+                City = "istanbul",
+                Country = "Türkiye",
+                Phone = "+905558885522",
+                EMail = "iletisim@abc.com",
+                Title = "İletişim Bilgilerimiz",
+                PanelColor = Colors.info
+            };
+}
+
+<partial name="_AddressInfoPartial" model="@addressInfoPartialModel" />

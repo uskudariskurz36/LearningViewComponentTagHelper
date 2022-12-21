@@ -1,0 +1,24 @@
+﻿@model AddressInfoPartialModel
+
+@{
+    string color = "default";
+
+    if(Model.PanelColor != Colors.none)
+    {
+        color = Model.PanelColor.ToString();
+    }
+}
+
+<hr />
+<div class="row">
+    <div class="col">
+        <div class="alert alert-@color">
+            <h4>@Model.Title</h4>
+            <address>
+                <b>Adres : </b>@Model.Address / @Model.City / @Model.Country<br />
+                <b>Telefon : </b><a href="tel:@Model.Phone">@Model.Phone</a><br />
+                <b>E-Posta : </b><a href="mailto:@Model.EMail">@Model.EMail</a>
+            </address>
+        </div>
+    </div>
+</div>
